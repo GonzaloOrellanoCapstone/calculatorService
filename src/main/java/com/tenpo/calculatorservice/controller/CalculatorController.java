@@ -14,12 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class CalculatorController {
 
+    private CalculatorService service;
+
     @Autowired
-    private CalculatorService calculatorService;
+    public CalculatorController(CalculatorService service) {
+        this.service = service;
+    }
 
     @GetMapping("/percentage/{firstValue}/{secondValue}")
     public CalculatorServiceResponse getPercentage(@PathVariable("firstValue") int firstValue,
                                                    @PathVariable("secondValue") int secondValue) {
-        return calculatorService.getPercentage(firstValue, secondValue);
+        return service.getPercentage(firstValue, secondValue);
     }
 }

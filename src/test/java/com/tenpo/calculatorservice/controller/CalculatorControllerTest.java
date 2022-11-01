@@ -1,19 +1,16 @@
 package com.tenpo.calculatorservice.controller;
 
 import com.tenpo.calculatorservice.service.CalculatorService;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(classes = CalculatorController.class)
-@RunWith(SpringRunner.class)
 public class CalculatorControllerTest extends AbstractTest {
 
     private final static String URI = "/calculator";
